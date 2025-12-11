@@ -9,7 +9,6 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 class HippodromeTest {
-    private Hippodrome hippodrome;
 
     @Test
     void shouldThrowWhenHorsesAreNull() {
@@ -69,7 +68,7 @@ class HippodromeTest {
         horses.add(new Horse("Horse5", 10.0, 500.0));
         horses.add(new Horse("Horse6", 10.0, 600.0));
 
-        Horse expectedWinner = horses.get(0);
+        Horse expectedWinner = horses.getFirst();
         for (Horse horse : horses) {
             if (horse.getDistance() > expectedWinner.getDistance()) {
                 expectedWinner = horse;
